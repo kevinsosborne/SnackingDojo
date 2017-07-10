@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Snacking Dojo</title>
+  <base href="/">
+  <script type="text/javascript">
+    function stopSpinner() {
+      setTimeout(() => {
+        document.getElementsByClassName("loaderFull")[0].style.display = "none";
+      }, 500)
+    }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+</head>
+
+<body onload="stopSpinner()">
+  <app-root></app-root>
+</body>
+
+
+<link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
+
+</html>

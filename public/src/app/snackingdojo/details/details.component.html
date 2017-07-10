@@ -1,0 +1,36 @@
+<md-toolbar class="toolbar">
+  <span class="title">{{product?.name}}</span>
+</md-toolbar>
+<div class="dialogContent">
+  <div class="left">
+    <img src="{{product.img}}" alt="{{product?.name}}">
+    <div class="dialogDescription">
+      <h4><i class="fa fa-check" aria-hidden="true"></i>Votes: <span class="votesNum">{{product?.votes}}</span></h4>
+      <hr />
+      <h4><i class="fa fa-comments" aria-hidden="true"></i>Comments: <span class="commentsNum"> {{product?.comments?.length}}</span></h4>
+      <hr />
+    </div>
+  </div>
+  <div class="right">
+    <h3 style="text-align: center;margin-top:10px" *ngIf="!githubUser">Login to comment</h3>
+    <form (submit)="submitComment(commentData)" style="margin:20px 10px 10px 10px" *ngIf="githubUser" #formData = "ngForm">
+      <div class="group">
+        <input type="text" required name="comment" [(ngModel)]="commentData.comment">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Comment</label>
+      </div><br /><br />
+      <button [disabled]="!formData.valid">Submit Comment</button>
+    </form>
+    <div class="comments">
+      <div class="comment" *ngFor="let comment of product.comments">
+        <img style="width: 50px; border-radius: 50%" src="{{comment._user?.img}}">
+        <div style="display: inline-block; vertical-align: top; margin-left: 10px">
+        <p>{{comment._user?.username}} <span>{{comment.createdAt | date: "MMM d h:mm a"}}</span></p>
+        </div>
+        <p>{{comment.comment}}</p>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

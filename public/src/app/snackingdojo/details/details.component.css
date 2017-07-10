@@ -1,0 +1,205 @@
+
+/*.productinfo {
+  min-width: 650px
+}*/
+.mat-toolbar{
+  margin: -25px -25px 20px !important;
+  width: calc(100% + 49px);
+  background: #4fab4f;
+  color: white;
+  overflow: hidden;
+}
+.title{
+  margin-right: 63vw;
+}
+
+.dialogContent{
+  overflow: hidden;
+  width: 100%;
+  min-width: 400px;
+  font-family: sans-serif;
+}
+
+.left, .right {
+  display: inline-block;
+  width:49%;
+  height: 650px;
+  vertical-align: top;
+  color: #2E7D32;
+  overflow: hidden;
+}
+
+.left img{
+  display:block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 300px;
+}
+.right {
+  border-left: 1px solid #eee;
+}
+
+.itemimg {
+  width: 100%;
+}
+.dialogDescription i{
+margin-right: 10px;
+}
+.dialogDescription h4 .votesNum{
+  margin-left: calc(100% - 123px);
+}
+.dialogDescription h4 .commentsNum{
+  margin-left: calc(100% - 165px);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(175, 175, 175, 0.8);
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.comments {
+    width: 100%;
+    height: calc(100% - 156px);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+.comment:hover {
+    background-color: #eee;
+}
+
+.comment {
+    padding: 15px 0 0 15px;
+}
+
+.group{
+  position:relative;
+  margin-bottom:-5px;
+  width: 80%;
+  margin: 0 auto;
+}
+input{
+  background: white;
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:100%;
+  border:none;
+  color: #4fab4f;
+  border-bottom:1px solid #4fab4f;
+}
+input:focus{
+  outline:none;
+}
+
+
+/* LABEL ======================================= */
+label{
+  color:#4fab4f;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label{
+  top:-20px;
+  font-size:14px;
+  color:#4fab4f;
+}
+
+/* BOTTOM BARS ================================= */
+.bar{
+  position:relative;
+  display:block;
+  width:calc(100% + 15px);
+}
+.bar:before, .bar:after{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#4fab4f;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#4fab4f; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#4fab4f; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#4fab4f; }
+  to 	{ width:0; background:transparent; }
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.comment span{
+    color: #aaa;
+    font-size: 15px;
+}
